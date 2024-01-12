@@ -19,6 +19,7 @@ export class ProductosService {
     prov.append('Nombre', producto.Nombre);
     prov.append('Precio', producto.Precio.toString());
     prov.append('Cantidad', producto.Cantidad.toString());
+    prov.append('Cantidad', producto.Cantidad.toString());
     
     return this.clientePhp.post(this.urlBase + 'insertar', prov);
   }

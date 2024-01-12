@@ -29,22 +29,22 @@ switch ($_GET["op"]) {
         echo json_encode($uno); //devuelvo el arreglo en formato json
         break;
     case 'insertar':
-        $Nombre = $_POST["nombre"];
-        $Precio = $_POST["precio"];
-        $cantidad = $_POST["cantidad"];
-
+        $Nombre = $_POST["Nombre"];
+        $Precio = $_POST["Precio"];
+        $Cantidad = $_POST["Cantidad"];
+        
 
         $datos = array(); //defino un arreglo
-        $datos = $productos->insertar($Nombre, $Precio, $cantidad); //llamo al modelo de usuarios e invoco al procedimiento insertar
+        $datos = $productos->insertar($Nombre, $Precio, $Cantidad); //llamo al modelo de usuarios e invoco al procedimiento insertar
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
     case 'actualizar':
         $ProductoId = $_POST["productoId"];
-        $Nombre = $_POST["nombre"];
-        $Precio = $_POST["precio"];
-        $cantidad = $_POST["cantidad"];
+        $Nombre = $_POST["Nombre"];
+        $Precio = $_POST["Precio"];
+        $Cantidad = $_POST["Cantidad"];
         $datos = array(); //defino un arreglo
-        $datos = $productos->actualizar($ProductoId, $Nombre, $Precio, $cantidad); //llamo al modelo de usuarios e invoco al procedimiento actual
+        $datos = $productos->actualizar($ProductoId, $Nombre, $Precio, $Cantidad); //llamo al modelo de usuarios e invoco al procedimiento actual
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
 
