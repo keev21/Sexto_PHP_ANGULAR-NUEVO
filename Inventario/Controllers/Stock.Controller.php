@@ -28,10 +28,10 @@ switch ($_GET["op"]) {
         echo json_encode($uno); //devuelvo el arreglo en formato json
         break;
     case 'insertar':
-        $ProductoId = $_POST["productoId"];
-        $ProveedorId = $_POST["proveedorId"];
-        $Cantidad = $_POST["cantidad"];
-        $Precio_Venta = $_POST["precio_Venta"];
+        $ProductoId = $_POST["ProductoId"];
+        $ProveedorId = $_POST["ProveedorId"];
+        $Cantidad = $_POST["Cantidad"];
+        $Precio_Venta = $_POST["Precio_Venta"];
 
 
         $datos = array(); //defino un arreglo
@@ -40,12 +40,12 @@ switch ($_GET["op"]) {
         break;
     case 'actualizar':
         $StockId = $_POST["stockId"];
-        $ProductoId = $_POST["productoId"];
-        $ProveedorId = $_POST["proveedorId"];
-        $Cantidad = $_POST["cantidad"];
-        $Precio_Venta = $_POST["precio_Venta"];
+        $ProductoId = $_POST["ProductoId"];
+        $ProveedorId = $_POST["ProveedorId"];
+        $Cantidad = $_POST["Cantidad"];
+        $Precio_Venta = $_POST["Precio_Venta"];
         $datos = array(); //defino un arreglo
-        $datos = $stocks->actualizar($StockId, $ProductoId, $Nombre, $Precio, $cantidad); //llamo al modelo de usuarios e invoco al procedimiento actual
+        $datos = $stocks->actualizar($StockId, $ProductoId, $ProveedorId, $Cantidad, $Precio_Venta); //llamo al modelo de usuarios e invoco al procedimiento actual
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
 

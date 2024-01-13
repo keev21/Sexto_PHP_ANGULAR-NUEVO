@@ -1,0 +1,82 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ title }}</h6>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="stock" (ngSubmit)="grabar()">
+        <div class="mb-2">
+          <label for="ProductoId">ProductoId</label>
+          <input type="text" class="form-control" formControlName="ProductoId" />
+          @if (stock.invalid && (stock.dirty || stock.touched)) {
+          <div class="alert">
+            @if (stock.errors?.["required"]) {
+            <div class="ng-invalid">ProductoId es requerido</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="mb-2">
+          <label for="ProveedorId">ProveedorId</label>
+          <input type="text" class="form-control" formControlName="ProveedorId" />
+          @if (stock.invalid && (stock.dirty || stock.touched)) {
+          <div class="alert">
+            @if (stock.errors?.["required"]) {
+            <div class="ng-invalid">El ProveedorId es requerido</div>
+            }@else if (stock.errors?.["minlength"]) {
+            <div>Debe tener minimo 1 caracteres.</div>
+            }@else if (stock.errors?.["maxlength"]) {
+            <div>Debe tener maximo 10 caracteres.</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="mb-2">
+            <label for="Cantidad">Cantidad</label>
+            <input type="text" class="form-control" formControlName="Cantidad" />
+            @if (stock.invalid && (stock.dirty || stock.touched)) {
+            <div class="alert">
+              @if (stock.errors?.["required"]) {
+              <div class="ng-invalid">La cantidad es requerida</div>
+              }@else if (stock.errors?.["minlength"]) {
+              <div>Debe tener minimo 1 caracteres.</div>
+              }@else if (stock.errors?.["maxlength"]) {
+              <div>Debe tener maximo 10 caracteres.</div>
+              }
+            </div>
+            }
+          </div>
+          <div class="mb-2">
+            <label for="Precio_Venta">Precio Venta</label>
+            <input type="text" class="form-control" formControlName="Precio_Venta" />
+            @if (stock.invalid && (stock.dirty || stock.touched)) {
+            <div class="alert">
+              @if (stock.errors?.["required"]) {
+              <div class="ng-invalid">El Precio de Venta es requerida</div>
+              }@else if (stock.errors?.["minlength"]) {
+              <div>Debe tener minimo 1 caracteres.</div>
+              }@else if (stock.errors?.["maxlength"]) {
+              <div>Debe tener maximo 10 caracteres.</div>
+              }
+            </div>
+            }
+          </div>
+
+         
+        
+  
+        <div class="mb-2">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!stock.valid"
+          >
+            Grabar
+          </button>
+          <button class="btn btn-secondary" routerLink="/stocks">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
