@@ -9,7 +9,7 @@ import { IStock } from '../Interfaces/istock';
 export class StockService {
 
   private urlBase: string =
-  'http://localhost/Sexto_PHP_ANGULAR/Inventario/Controllers/Stock.Controller.php?op=';
+  'http://localhost/Sexto_PHP_ANGULAR-NUEVO/Inventario/Controllers/Stock.Controller.php?op=';
 constructor(private clientePhp: HttpClient) {}
 todos(): Observable<IStock[]> {
   return this.clientePhp.get<IStock[]>(this.urlBase + 'todos');
